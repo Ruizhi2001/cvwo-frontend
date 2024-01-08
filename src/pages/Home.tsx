@@ -1,13 +1,16 @@
-import BasicThreadList from "../components/BasicThreadList";
+import BasicThreadList from "../components/Home/BasicThreadList";
+import RichTextEditor from "../components/Post/RichTextEditor";
+import NavBar from "../components/shared/NavBar";
 import React from "react";
 
-const Home: React.FC = () => {
+export const Home = () => {
     return (
         <>
-            <h3>
-                {"Welcome to CVWO's sample react app! Here's a basic list of forum threads for you to experiment with."}
-            </h3>
+            <NavBar />
             <br />
+            <div style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
+                <RichTextEditor endpoint="http://localhost:8000/api/entry" />
+            </div>
             <BasicThreadList />
         </>
     );
