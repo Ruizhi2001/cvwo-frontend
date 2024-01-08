@@ -1,13 +1,9 @@
 import CommentItem from "./CommentItem";
-import Comment from "../types/Comment";
+import Comment from "../../types/Comment";
 
 import React from "react";
 
-type Props = {
-    styled: boolean;
-};
-
-const BasicCommentList: React.FC<Props> = ({ styled }: Props) => {
+const BasicCommentList = () => {
     const comments: Comment[] = [
         {
             body:
@@ -32,7 +28,7 @@ const BasicCommentList: React.FC<Props> = ({ styled }: Props) => {
     return (
         <ul>
             {comments.map((comment) => (
-                <CommentItem comment={comment} styled={styled} key="" />
+                <CommentItem comment={comment} key="" />
             ))}
         </ul>
     );
